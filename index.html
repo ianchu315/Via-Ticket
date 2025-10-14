@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival de Comida - Sistema de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎪 Festival de Comida</h1>
+        <p>Sistema de Pedidos en Línea</p>
+    </header>
+
+    <main>
+        <!-- Sección de registro de cliente -->
+        <section id="registro-section" class="section">
+            <h2>📝 Registro de Cliente</h2>
+            <form id="registro-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error-message" id="error-nombre"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="apellido">Apellido *</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                    <span class="error-message" id="error-apellido"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dni">DNI *</label>
+                    <input type="text" id="dni" name="dni" required placeholder="12345678">
+                    <span class="error-message" id="error-dni"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="celular">Número de Celular *</label>
+                    <input type="tel" id="celular" name="celular" required placeholder="+54 9 11 1234-5678">
+                    <span class="error-message" id="error-celular"></span>
+                </div>
+                
+                <button type="submit">Continuar con el Pedido</button>
+            </form>
+        </section>
+
+        
+
+        <!-- Sección de productos -->
+        <section id="productos-section" class="section hidden">
+            <h2>🍔 Menú del Festival</h2>
+            <form id="productos-form">
+                <div id="productos-lista">
+                    <!-- Los productos se cargarán dinámicamente -->
+                </div>
+                
+                <div class="total-section">
+                    <h3>Total: $<span id="total-precio">0</span></h3>
+                </div>
+                
+                <button type="submit" id="generar-ticket-btn" disabled>Generar Ticket de Pedido</button>
+                <button type="button" id="volver-registro">Volver al Registro</button>
+            </form>
+        </section>
+
+        <!-- Sección de ticket -->
+        <section id="ticket-section" class="section hidden">
+            <div id="ticket-container">
+                <!-- El ticket se generará dinámicamente -->
+            </div>
+            <div class="ticket-actions">
+                <button id="nuevo-pedido">Nuevo Pedido</button>
+                <button id="imprimir-ticket" onclick="window.print()">Imprimir Ticket</button>
+            </div>
+        </section>
+
+        <!-- Sección de ticket expirado -->
+        <section id="expired-section" class="section hidden">
+            <div class="expired-message">
+                <h2>⏰ Ticket Expirado</h2>
+                <p>Tu ticket ha expirado después de 3 horas. Por favor, realiza un nuevo pedido.</p>
+                <button id="restart-pedido">Realizar Nuevo Pedido</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

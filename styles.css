@@ -1,0 +1,393 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Main container */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Secciones */
+.section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.section.hidden {
+    display: none;
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Botones */
+button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #27ae60, #229954);
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+}
+
+#volver-registro, #nuevo-pedido, #restart-pedido {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+}
+
+#imprimir-ticket {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+/* Lista de productos */
+.producto-item {
+    background: #f8f9fa;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.producto-item:hover {
+    border-color: #3498db;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+}
+
+.producto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.producto-nombre {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.producto-precio {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #27ae60;
+}
+
+.producto-descripcion {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cantidad-control label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.cantidad-control input {
+    width: 80px;
+    text-align: center;
+}
+
+.cantidad-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Total */
+.total-section {
+    background: #e8f5e8;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.total-section h3 {
+    color: #27ae60;
+    font-size: 1.5rem;
+}
+
+/* Ticket */
+.ticket {
+    background: white;
+    border: 2px dashed #bdc3c7;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+.ticket-header {
+    text-align: center;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ticket-header h3 {
+    color: #e74c3c;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-numero {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3498db;
+}
+
+.ticket-cliente {
+    margin-bottom: 1rem;
+}
+
+.ticket-cliente h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-productos {
+    margin: 1rem 0;
+}
+
+.ticket-productos h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px dotted #ecf0f1;
+}
+
+.ticket-total {
+    border-top: 2px solid #2c3e50;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.ticket-total h3 {
+    color: #27ae60;
+    font-size: 1.3rem;
+}
+
+.ticket-footer {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+    color: #7f8c8d;
+}
+
+.ticket-expira {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #856404;
+}
+
+.ticket-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Mensaje de expiración */
+.expired-message {
+    text-align: center;
+    padding: 2rem;
+}
+
+.expired-message h2 {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.expired-message p {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .section {
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+    
+    .producto-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .cantidad-control {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .ticket-item {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section:not(.hidden) {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Efectos de impresión */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .ticket-actions {
+        display: none;
+    }
+    
+    .section:not(#ticket-section) {
+        display: none;
+    }
+}
